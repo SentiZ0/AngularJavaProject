@@ -13,6 +13,8 @@ import { NavbarComponent } from './components/home/navbar/navbar.component';
 import { PostCreateComponent } from './components/post/post-create/post-create.component';
 import { PostGetAllComponent } from './components/post/post-get-all/post-get-all.component';
 import { UserCreateComponent } from './components/user/user-create/user-create.component';
+import { UserLoginComponent } from './components/user/user-login/user-login.component';
+import { AboutUsComponent } from './components/home/about-us/about-us.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { UserCreateComponent } from './components/user/user-create/user-create.c
     NavbarComponent,
     PostCreateComponent,
     PostGetAllComponent,
-    UserCreateComponent
+    UserCreateComponent,
+    UserLoginComponent,
+    AboutUsComponent
   ],
   imports: [
     BrowserModule,

@@ -3,11 +3,11 @@ import { User } from 'src/app/models/user';
 import { userService } from 'src/app/services/user-service.service';
 
 @Component({
-  selector: 'app-user-create',
-  templateUrl: './user-create.component.html',
-  styleUrls: ['./user-create.component.css']
+  selector: 'app-user-login',
+  templateUrl: './user-login.component.html',
+  styleUrls: ['./user-login.component.css']
 })
-export class UserCreateComponent {
+export class UserLoginComponent {
 
   constructor(private userService : userService)
   {}
