@@ -1,1 +1,18 @@
-<p>post-get-all works!</p>
+<div *ngFor="let post of posts">
+    <div class="post-container">
+        <div class="post">
+            <div class="post-header">
+                <div class="post-author">Author: {{ post.authorId }}</div>
+                <div class="post-time">Created: {{ post.creationTime | date }}</div>
+            </div>
+            <div class="post-content">
+                <h2 class="post-title">{{ post.title }}</h2>
+                <p class="post-description">{{ post.description }}</p>
+            </div>
+            <div class="post-footer">
+                <div class="post-category">Category: {{ post.categoryId }}</div>
+                <div class="post-status">Status: {{ post.status }}</div>
+            </div>
+        </div>
+    </div>
+</div>

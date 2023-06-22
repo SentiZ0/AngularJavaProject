@@ -13,7 +13,16 @@ export class PostGetSingleComponent {
   post?: Post;
   comments?: Comment[];
 
+  isEditMode: boolean = false;
+
   id: number = 0;
+  
+  ngOnInit()
+  {
+    this.getPost();
+    
+    this.getComments();
+  }
 
   constructor(private postService : postService, private commentService: commentService)
   {}
@@ -27,4 +36,16 @@ export class PostGetSingleComponent {
   {
     this.commentService.getComments()
   }
+
+  switchToEditMode() {
+    this.isEditMode = true;
+}
+
+saveChanges() {
+    this.isEditMode = false;
+}
+
+cancelEdit() {
+    this.isEditMode = false;
+}
 }

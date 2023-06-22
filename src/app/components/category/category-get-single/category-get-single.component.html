@@ -1,0 +1,18 @@
+<div class="container">
+    <h2>Category Details</h2>
+    <div *ngIf="!editMode">
+      <p><strong>ID:</strong> {{ category?.id }}</p>
+      <p><strong>Category Name:</strong> {{ category?.categoryName }}</p>
+      <button class="btn btn-primary" (click)="editMode = true">Update</button>
+    </div>
+    <div *ngIf="editMode && category">
+      <form (submit)="saveCategory()">
+        <div class="form-group">
+          <label for="categoryName">Category Name:</label>
+          <input type="text" class="form-control" id="categoryName" [(ngModel)]="category.categoryName" required>
+        </div>
+        <button type="submit" class="btn btn-success">Save</button>
+        <button class="btn btn-secondary ml-2" (click)="cancelEdit()">Cancel</button>
+      </form>
+    </div>
+  </div>

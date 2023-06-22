@@ -11,6 +11,11 @@ export class PostGetAllComponent {
 
   posts?: Post[];
 
+  ngOnInit()
+  {
+    this.getPosts();
+  }
+
   constructor(private postService : postService)
   {}
 
