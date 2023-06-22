@@ -10,13 +10,13 @@ export class categoryService {
 
   constructor(private httpClient : HttpClient) { }
 
-  getCategories = (): Observable<Category> => this.httpClient.get<Category>("https://localhost:8080/category/Comments");
+  getCategories = (): Observable<Category[]> => this.httpClient.get<Category[]>("http://localhost:8080/categories/getAll");
 
-  getCategory  = (id: number): Observable<Category> => this.httpClient.get<Category>("https://localhost:8080/category/Comments/" + id);
+  getCategory  = (id: number): Observable<Category> => this.httpClient.get<Category>("http://localhost:8080/categories/getSingle/" + id);
 
-  createCategory = (category: Category): Observable<Category> => this.httpClient.post<Category>("https://localhost:8080/category/Comments", category);
+  createCategory = (category: Category): Observable<Category> => this.httpClient.post<Category>("http://localhost:8080/categories/create", category);
 
-  updateCategory = (id: number, category: Category): Observable<Category> => this.httpClient.put<Category>("https://localhost:8080/category/Comments/" + id, category);
+  updateCategory = (id: number, category: Category): Observable<Category> => this.httpClient.put<Category>("http://localhost:8080/categories/update/" + id, category);
 
-  deleteCategory = (id: number): Observable<Category> => this.httpClient.delete<Category>("https://localhost:8080/category/Comments/" + id);
+  deleteCategory = (id: number): Observable<Category> => this.httpClient.delete<Category>("http://localhost:8080/categories/delete/" + id);
 }
