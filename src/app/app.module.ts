@@ -15,6 +15,11 @@ import { PostGetAllComponent } from './components/post/post-get-all/post-get-all
 import { UserCreateComponent } from './components/user/user-create/user-create.component';
 import { UserLoginComponent } from './components/user/user-login/user-login.component';
 import { AboutUsComponent } from './components/home/about-us/about-us.component';
+import { EmailGetAllComponent } from './components/email/email-get-all/email-get-all.component';
+import { EmailGetSingleComponent } from './components/email/email-get-single/email-get-single.component';
+import { CategoryGetAllComponent } from './components/category/category-get-all/category-get-all.component';
+import { CategoryGetSingleComponent } from './components/category/category-get-single/category-get-single.component';
+import { PostGetSingleComponent } from './components/post/post-get-single/post-get-single.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +30,12 @@ import { AboutUsComponent } from './components/home/about-us/about-us.component'
     PostGetAllComponent,
     UserCreateComponent,
     UserLoginComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    EmailGetAllComponent,
+    EmailGetSingleComponent,
+    CategoryGetAllComponent,
+    CategoryGetSingleComponent,
+    PostGetSingleComponent
   ],
   imports: [
     BrowserModule,

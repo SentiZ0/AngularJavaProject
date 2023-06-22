@@ -1,0 +1,16 @@
+
+<div class="container">
+    <div class="post-container">
+      <h2 class="post-title">{{ post?.title }}</h2>
+      <p class="post-description">{{ post?.description }}</p>
+      <p class="post-author">Author: {{ post?.authorId }}</p>
+      <p class="post-time">Created: {{ post?.creationTime | date }}</p>
+    </div>
+
+    <div *ngFor="let comment of comments" class="comment-container">
+      <p class="comment-content">{{ comment.content }}</p>
+      <p class="comment-author">Author: {{ comment.authorId }}</p>
+      <p class="comment-time">Created: {{ comment.creationTime | date }}</p>
+    </div>
+</div>
+
