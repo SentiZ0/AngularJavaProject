@@ -1,0 +1,11 @@
+<div class="container">
+    <h2 class="text-center">Dodaj kategorię</h2>
+    
+    <form (ngSubmit)="createCategory()">
+      <div class="form-group">
+        <label for="categoryName">Nazwa kategorii:</label>
+        <input type="text" [(ngModel)]="categoryName" class="form-control" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Dodaj</button>
+    </form>
+  </div>
