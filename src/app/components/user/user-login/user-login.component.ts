@@ -17,13 +17,13 @@ export class UserLoginComponent {
   userLogin: string = '';
   password: string = '';
 
-  loginUser() 
+  loginUser()
   {
     let id = 0;
 
     let user = new User(id, this.userLogin, this.password)
 
-    this.userService.createUser(user).subscribe(user => {this.user = user;
+    this.userService.loginUser(user).subscribe(user => {this.user = user;
       if(this.user != undefined)
       {
         localStorage.setItem('LoggedUserLogin', this.user.userLogin.toString());

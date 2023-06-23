@@ -10,7 +10,7 @@ export class NavbarComponent {
   loggedUserLogin? : string;
   loggedUserPassword? : string;
 
-  public isButtonVisible = true;
+  public isButtonVisible = false;
 
   ngOnInit()
   {
