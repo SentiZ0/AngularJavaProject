@@ -19,6 +19,6 @@ export class EmailGetAllComponent {
 
   getEmails()
   {
-    this.emailService.getEmails().subscribe();
+    this.emailService.getEmails().subscribe(emails => {this.emails = emails});
   }
 }
