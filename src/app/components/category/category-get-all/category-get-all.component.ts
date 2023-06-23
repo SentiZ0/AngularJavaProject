@@ -25,6 +25,6 @@ export class CategoryGetAllComponent {
 
   deleteCategory(id: number)
   {
-    this.categoryService.deleteCategory(id).subscribe();
+    this.categoryService.deleteCategory(id).subscribe(categories => {this.getCategories()});
   }
 }

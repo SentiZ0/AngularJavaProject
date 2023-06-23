@@ -3,6 +3,7 @@ import { Comment } from 'src/app/models/comment';
 import { Post } from 'src/app/models/post';
 import { commentService } from 'src/app/services/comment-service.service';
 import { postService } from 'src/app/services/post-service.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-post-get-single',
@@ -19,12 +20,14 @@ export class PostGetSingleComponent {
   
   ngOnInit()
   {
+    this.id = Number(this.route.snapshot.paramMap.get('id'));
+
     this.getPost();
-    
+
     this.getComments();
   }
 
-  constructor(private postService : postService, private commentService: commentService)
+  constructor(private postService : postService, private commentService: commentService, private route: ActivatedRoute)
   {}
 
   getPost()
@@ -34,7 +37,7 @@ export class PostGetSingleComponent {
 
   getComments()
   {
-    this.commentService.getComments()
+    this.commentService.getComments(this.id).subscribe(comments => {this.comments = comments})
   }
 
   switchToEditMode() {

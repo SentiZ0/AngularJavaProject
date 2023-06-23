@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Category } from 'src/app/models/category';
 import { categoryService } from 'src/app/services/category-service.service';
 
@@ -10,10 +11,18 @@ import { categoryService } from 'src/app/services/category-service.service';
 export class CategoryGetSingleComponent {
   category?: Category;
 
+  id: number = 0;
+
   editMode: boolean = false;
 
-  constructor(private categoryService : categoryService)
+  constructor(private categoryService : categoryService, private route: ActivatedRoute)
   {
+  }
+
+  ngOnInit()
+  {
+    this.id = Number(this.route.snapshot.paramMap.get('id'));
+
     this.getCategory();
   }
 

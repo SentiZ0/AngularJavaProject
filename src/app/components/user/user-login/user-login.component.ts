@@ -30,6 +30,8 @@ export class UserLoginComponent {
 
         localStorage.setItem('LoggedUserPassword', this.user.password);
 
+        localStorage.setItem('LoggedUserId', this.user.id.toString());
+
         window.location.href = 'http://localhost:4200';
       }});
 

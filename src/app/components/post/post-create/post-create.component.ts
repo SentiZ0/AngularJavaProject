@@ -21,7 +21,11 @@ export class PostCreateComponent {
 
   constructor(private postService : postService)
   {
+    let userId = localStorage.getItem('LoggedUserId');
 
+    if (userId) {
+      this.authorId = parseInt(userId);
+    }
   }
 
   createPost()
