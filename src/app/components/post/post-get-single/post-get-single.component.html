@@ -2,7 +2,6 @@
   <form (submit)="saveChanges()">
       <input [(ngModel)]="post.title" name="title" placeholder="Title" required><br>
       <textarea [(ngModel)]="post.description" name="description" placeholder="Description" required></textarea><br>
-      <input [(ngModel)]="post.authorId" name="authorId" placeholder="Author" required><br>
       <button type="submit">Save</button>
       <button (click)="cancelEdit()">Cancel</button>
   </form>
@@ -14,3 +13,4 @@
   <p class="comment-time">Created: {{ comment.creationTime | date }}</p>
 </div>
 
+<button (click)="switchToEditMode()">Edit</button>
