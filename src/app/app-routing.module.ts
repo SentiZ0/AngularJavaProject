@@ -14,13 +14,14 @@ const routes: Routes = [
 
   { path: 'category-create', component: CategoryCreateComponent },
   { path: 'user-create', component: UserCreateComponent },
+  { path: 'post-get-single/:id', component: UserCreateComponent },
   { path: 'user-login', component: UserLoginComponent },
   { path: '', redirectTo: 'post-get-all', pathMatch: 'full' },
   { path: 'post-create', component: PostCreateComponent },
   { path: 'post-get-all', component: PostGetAllComponent },
   { path: 'about-us', component: AboutUsComponent },
   { path: 'category-get-all', component: CategoryGetAllComponent },
-  { path: 'category-get-single', component: CategoryGetSingleComponent },
+  { path: 'category-get-single/:id', component: CategoryGetSingleComponent },
   { path: 'email-get-all', component: EmailGetAllComponent }
 ]
 
