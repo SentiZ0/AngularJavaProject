@@ -7,6 +7,7 @@ import { EmailGetAllComponent } from './components/email/email-get-all/email-get
 import { AboutUsComponent } from './components/home/about-us/about-us.component';
 import { PostCreateComponent } from './components/post/post-create/post-create.component';
 import { PostGetAllComponent } from './components/post/post-get-all/post-get-all.component';
+import { PostGetSingleComponent } from './components/post/post-get-single/post-get-single.component';
 import { UserCreateComponent } from './components/user/user-create/user-create.component';
 import { UserLoginComponent } from './components/user/user-login/user-login.component';
 
@@ -14,7 +15,7 @@ const routes: Routes = [
 
   { path: 'category-create', component: CategoryCreateComponent },
   { path: 'user-create', component: UserCreateComponent },
-  { path: 'post-get-single/:id', component: UserCreateComponent },
+  { path: 'post-get-single/:id', component: PostGetSingleComponent },
   { path: 'user-login', component: UserLoginComponent },
   { path: '', redirectTo: 'post-get-all', pathMatch: 'full' },
   { path: 'post-create', component: PostCreateComponent },

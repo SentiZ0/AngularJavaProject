@@ -19,4 +19,6 @@ export class postService {
   updatePost = (id: number, Post: Post): Observable<Post> => this.httpClient.put<Post>("http://localhost:8080/posts/update/" + id, Post);
 
   deletePost = (id: number): Observable<Post> => this.httpClient.delete<Post>("http://localhost:8080/posts/delete/" + id);
+
+  changeStatus =  (id: number): Observable<Post> => this.httpClient.get<Post>("http://localhost:8080/posts/updateStatus/" + id);
 }

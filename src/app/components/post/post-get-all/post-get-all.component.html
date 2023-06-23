@@ -14,5 +14,8 @@
                 <div class="post-status">Status: {{ post.status }}</div>
             </div>
         </div>
+        <button [routerLink]="'get-single-post/' + post.id">Przejdź do pojedynczego posta</button>
+        <button (click)="changeStatus(post.id)">Zmień status</button>
+        <button (click)="deletePost(post.id)">Usuń post</button>
     </div>
 </div>

@@ -23,4 +23,12 @@ export class PostGetAllComponent {
   {
     this.postService.getPosts().subscribe(posts => {this.posts = posts})
   }
+
+  changeStatus(postId: number) {
+    this.postService.changeStatus(postId).subscribe();
+  }
+
+  deletePost(postId: number) {
+      this.postService.deletePost(postId).subscribe(data => {this.getPosts});
+  }
 }
