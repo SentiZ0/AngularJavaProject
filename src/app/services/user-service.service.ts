@@ -10,7 +10,7 @@ export class userService {
 
   constructor(private httpClient : HttpClient) { }
 
-  createUser = (User: User): Observable<User> => this.httpClient.post<User>("http://localhost:8080/users/create", User);
+  createUser = (User: User): Observable<User> => this.httpClient.post<User>("http://localhost:8080/user-accounts/create", User);
 
-  loginUser = (User: User): Observable<User> => this.httpClient.post<User>("http://localhost:8080/users/auth", User);
+  loginUser = (User: User): Observable<User> => this.httpClient.post<User>("http://localhost:8080/user-accounts/auth", User);
 }

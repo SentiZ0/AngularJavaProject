@@ -31,12 +31,12 @@
       </li>
       <div *ngIf="isButtonVisible">
         <li class="nav-item">
-          <button class="btn btn-primary" routerLink="/">Log In</button>
+          <button class="btn btn-primary" routerLink="/user-login">Log In</button>
         </li>
       </div>
       <div *ngIf="!isButtonVisible">
         <li class="nav-item">
-          <button class="btn btn-primary" (click)="logOut()" routerLink="/">Log In</button>
+          <button class="btn btn-primary" (click)="logOut()" routerLink="/">Log Out</button>
         </li>
       </div>
     </ul>
