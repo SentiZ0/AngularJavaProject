@@ -19,8 +19,8 @@ export class UserCreateComponent {
   {
     let id = 0;
 
-    let user = new User(id, this.userLogin, this.password)
+    let user = new User(id, this.userLogin, this.password, 1)
 
-    this.userService.createUser(user).subscribe();
+    this.userService.createUser(user).subscribe(data => {window.location.href = 'http://localhost:4200';});
   }
 }

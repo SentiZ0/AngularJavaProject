@@ -5,10 +5,12 @@ import { CategoryGetAllComponent } from './components/category/category-get-all/
 import { CategoryGetSingleComponent } from './components/category/category-get-single/category-get-single.component';
 import { EmailGetAllComponent } from './components/email/email-get-all/email-get-all.component';
 import { AboutUsComponent } from './components/home/about-us/about-us.component';
+import { NoPermissionsComponent } from './components/home/no-permissions/no-permissions.component';
 import { PostCreateComponent } from './components/post/post-create/post-create.component';
 import { PostGetAllComponent } from './components/post/post-get-all/post-get-all.component';
 import { PostGetSingleComponent } from './components/post/post-get-single/post-get-single.component';
 import { UserCreateComponent } from './components/user/user-create/user-create.component';
+import { UserGetAllComponent } from './components/user/user-get-all/user-get-all.component';
 import { UserLoginComponent } from './components/user/user-login/user-login.component';
 
 const routes: Routes = [
@@ -23,7 +25,9 @@ const routes: Routes = [
   { path: 'about-us', component: AboutUsComponent },
   { path: 'category-get-all', component: CategoryGetAllComponent },
   { path: 'category-get-single/:id', component: CategoryGetSingleComponent },
-  { path: 'email-get-all', component: EmailGetAllComponent }
+  { path: 'email-get-all', component: EmailGetAllComponent },
+  { path: 'user-get-all', component: UserGetAllComponent},
+  { path: 'no-auth', component: NoPermissionsComponent}
 ]
 
 @NgModule({

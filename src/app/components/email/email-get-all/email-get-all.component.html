@@ -1,17 +1,37 @@
-
-<div *ngFor="let email of emails">
-    <div class="container">
-        <div class="card">
-            <div class="card-header">
-                <h5 class="card-title">{{ email.title }}</h5>
+<div class="container">
+    <h2>Emails</h2>
+    <div *ngFor="let email of paginatedPosts">
+        <div class="distance">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">{{ email.title }}</h5>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Recipient ID: {{ email.recipientId }}</li>
+                    <li class="list-group-item">Sending Date: {{ email.sendingDate | date }}</li>
+                </ul>
+                <div class="card-body">
+                    <p class="card-text">{{ email.content }}</p>
+                </div>
             </div>
-            <div class="card-body">
-                <p class="card-text">{{ email.content }}</p>
-            </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">Recipient ID: {{ email.recipientId }}</li>
-                <li class="list-group-item">Sending Date: {{ email.sendingDate | date }}</li>
-            </ul>
         </div>
+    </div>
+
+    <div clas="distance">
+        <nav>
+            <ul class="pagination">
+                <li class="page-item" [class.disabled]="currentPage === 1">
+                    <button class="page-link" (click)="goToPage(currentPage - 1)"
+                        [disabled]="currentPage === 1">Poprzednia</button>
+                </li>
+                <li class="page-item" *ngFor="let page of totalPages" [class.active]="currentPage === page">
+                    <button class="page-link" (click)="goToPage(page)">{{ page }}</button>
+                </li>
+                <li class="page-item" [class.disabled]="currentPage === totalPages.length">
+                    <button class="page-link" (click)="goToPage(currentPage + 1)"
+                        [disabled]="currentPage === totalPages.length">Następna</button>
+                </li>
+            </ul>
+        </nav>
     </div>
 </div>

@@ -16,7 +16,7 @@ export class postService {
 
   createPost = (Post: Post): Observable<Post> => this.httpClient.post<Post>("http://localhost:8080/posts/create", Post);
 
-  updatePost = (id: number, Post: Post): Observable<Post> => this.httpClient.put<Post>("http://localhost:8080/posts/update/" + id, Post);
+  updatePost = (Post: Post): Observable<Post> => this.httpClient.put<Post>("http://localhost:8080/posts/update", Post);
 
   deletePost = (id: number): Observable<Post> => this.httpClient.delete<Post>("http://localhost:8080/posts/delete/" + id);
 

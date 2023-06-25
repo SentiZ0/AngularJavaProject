@@ -21,7 +21,7 @@ export class UserLoginComponent {
   {
     let id = 0;
 
-    let user = new User(id, this.userLogin, this.password)
+    let user = new User(id, this.userLogin, this.password, 0)
 
     this.userService.loginUser(user).subscribe(user => {this.user = user;
       if(this.user != undefined)
@@ -31,6 +31,8 @@ export class UserLoginComponent {
         localStorage.setItem('LoggedUserPassword', this.user.password);
 
         localStorage.setItem('LoggedUserId', this.user.id.toString());
+
+        localStorage.setItem('LoggedUserRole', this.user.userRole.toString());
 
         window.location.href = 'http://localhost:4200';
       }});

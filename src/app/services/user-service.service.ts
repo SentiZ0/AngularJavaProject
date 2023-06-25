@@ -13,4 +13,8 @@ export class userService {
   createUser = (User: User): Observable<User> => this.httpClient.post<User>("http://localhost:8080/user-accounts/create", User);
 
   loginUser = (User: User): Observable<User> => this.httpClient.post<User>("http://localhost:8080/user-accounts/auth", User);
+
+  getUsers = () : Observable<User[]> => this.httpClient.get<User[]>("http://localhost:8080/user-accounts/getAll");
+
+  updateUser = (User: User) : Observable<User> => this.httpClient.put<User>("http://localhost:8080/user-accounts/update", User);
 }

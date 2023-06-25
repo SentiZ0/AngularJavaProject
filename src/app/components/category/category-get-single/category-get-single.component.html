@@ -1,18 +1,21 @@
 <div class="container">
-    <h2>Category Details</h2>
+  <h2>Category Details</h2>
+  <div class="distance">
     <div *ngIf="!editMode">
-      <p><strong>ID:</strong> {{ category?.id }}</p>
-      <p><strong>Category Name:</strong> {{ category?.categoryName }}</p>
-      <button class="btn btn-primary" (click)="editMode = true">Update</button>
+      <label for="categoryName"><strong>Category Name</strong></label>
+      <p>{{ category?.categoryName }}</p>
+      <button class="btn btn-primary" (click)="editMode = true;">Update</button>
+      <button class="btn btn-secondary ml-2" routerLink="/category-get-all">Cancel</button>
     </div>
     <div *ngIf="editMode && category">
       <form (submit)="saveCategory()">
         <div class="form-group">
-          <label for="categoryName">Category Name:</label>
-          <input type="text" class="form-control" id="categoryName" [(ngModel)]="category.categoryName" required>
+          <label for="categoryName"><strong>Category Name</strong></label>
+          <input type="text" class="form-control" name="editCategoryName" id="categoryName" [(ngModel)]="editCategoryName" required>
         </div>
         <button type="submit" class="btn btn-success">Save</button>
         <button class="btn btn-secondary ml-2" (click)="cancelEdit()">Cancel</button>
       </form>
     </div>
   </div>
+</div>

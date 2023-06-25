@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Category } from 'src/app/models/category';
 import { categoryService } from 'src/app/services/category-service.service';
 
@@ -15,7 +15,11 @@ export class CategoryGetSingleComponent {
 
   editMode: boolean = false;
 
-  constructor(private categoryService : categoryService, private route: ActivatedRoute)
+  editCategoryName: string = "";
+
+  userRole : number = 0;
+
+  constructor(private categoryService : categoryService, private route: ActivatedRoute, private router: Router)
   {
   }
 
@@ -23,18 +27,29 @@ export class CategoryGetSingleComponent {
   {
     this.id = Number(this.route.snapshot.paramMap.get('id'));
 
+    this.category = new Category(1, "Elektronika");
+
     this.getCategory();
+
+    let userRoleAsString = localStorage.getItem('loggedUserRole');
+
+    if (userRoleAsString) {
+      this.userRole = parseInt(userRoleAsString);
+    }
+
+    if(this.userRole == null || this.userRole < 2)
+    {
+      this.router.navigate(['/no-auth']);
+    }
   }
 
   saveCategory() {
-    if(this.category)
-    {
-      let category = new Category(this.category?.id, this.category?.categoryName)
-
-      this.categoryService.updateCategory(category.id, category).subscribe();
-      this.editMode = false;
+    if (this.category) {
+      const updatedCategory = new Category(this.category.id, this.editCategoryName);
+      this.categoryService.updateCategory(updatedCategory).subscribe(data => {
+        this.router.navigate(['/category-get-all']);
+      });
     }
-
   }
 
   getCategory()

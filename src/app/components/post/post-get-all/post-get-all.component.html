@@ -1,21 +1,40 @@
-<div *ngFor="let post of posts">
-    <div class="post-container">
-        <div class="post">
-            <div class="post-header">
-                <div class="post-author">Author: {{ post.authorId }}</div>
-                <div class="post-time">Created: {{ post.creationTime | date }}</div>
+
+<div class="container">
+    <div *ngFor="let post of paginatedPosts">
+        <div class="post-container">
+            <div class="post">
+                <div class="post-header">
+                    <div class="post-author">Author: {{ post.authorId }}</div>
+                    <div class="post-time">Created: {{ post.creationTime | date }}</div>
+                </div>
+                <div class="post-content">
+                    <h2 class="post-title">{{ post.title }}</h2>
+                    <p class="post-description">{{ post.description }}</p>
+                </div>
+                <div class="post-footer">
+                    <div class="post-category">Category: {{ post.categoryId }}</div>
+                    <div class="post-status">Status: {{ post.status }}</div>
+                </div>
             </div>
-            <div class="post-content">
-                <h2 class="post-title">{{ post.title }}</h2>
-                <p class="post-description">{{ post.description }}</p>
-            </div>
-            <div class="post-footer">
-                <div class="post-category">Category: {{ post.categoryId }}</div>
-                <div class="post-status">Status: {{ post.status }}</div>
+            <div class="distance">
+                <button [routerLink]="'/post-get-single/' + post.id" class="btn btn-primary">Przejdź do pojedynczego posta</button>
+                <button (click)="changeStatus(post.id)" class="btn btn-primary">Zmień status</button>
+                <button (click)="deletePost(post.id)" class="btn btn-danger">Usuń post</button>
             </div>
         </div>
-        <button [routerLink]="'get-single-post/' + post.id" class="btn btn-primary">Przejdź do pojedynczego posta</button>
-        <button (click)="changeStatus(post.id)" class="btn btn-primary">Zmień status</button>
-        <button (click)="deletePost(post.id)" class="btn btn-danger">Usuń post</button>
     </div>
+
+    <nav>
+        <ul class="pagination">
+          <li class="page-item" [class.disabled]="currentPage === 1">
+            <button class="page-link" (click)="goToPage(currentPage - 1)" [disabled]="currentPage === 1">Poprzednia</button>
+          </li>
+          <li class="page-item" *ngFor="let page of totalPages" [class.active]="currentPage === page">
+            <button class="page-link" (click)="goToPage(page)">{{ page }}</button>
+          </li>
+          <li class="page-item" [class.disabled]="currentPage === totalPages.length">
+            <button class="page-link" (click)="goToPage(currentPage + 1)" [disabled]="currentPage === totalPages.length">Następna</button>
+          </li>
+        </ul>
+    </nav>
 </div>

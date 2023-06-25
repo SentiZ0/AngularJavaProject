@@ -9,6 +9,7 @@ export class NavbarComponent {
 
   loggedUserLogin? : string;
   loggedUserPassword? : string;
+  loggedUserRole? : number = 0;
 
   public isButtonVisible = false;
 
@@ -26,6 +27,13 @@ export class NavbarComponent {
     if(userPassword)
     {
       this.loggedUserPassword = userPassword;
+    }
+
+    let userRole = localStorage.getItem('LoggedUserRole');
+
+    if(userRole)
+    {
+      this.loggedUserRole = parseInt(userRole);
     }
     else
     {

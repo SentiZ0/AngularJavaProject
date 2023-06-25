@@ -15,14 +15,17 @@
       <li class="nav-item">
         <a class="nav-link" routerLink="/about-us">O nas</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" *ngIf="loggedUserRole">
         <a class="nav-link" routerLink="/post-create">Utwórz ogłoszenie</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" *ngIf="loggedUserRole && loggedUserRole > 2">
         <a class="nav-link" routerLink="/email-get-all">Emails</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" *ngIf="loggedUserRole && loggedUserRole > 1">
         <a class="nav-link" routerLink="/category-get-all">Categories</a>
+      </li>
+      <li class="nav-item" *ngIf="loggedUserRole && loggedUserRole > 2">
+        <a class="nav-link" routerLink="/user-get-all">Users</a>
       </li>
     </ul>
     <ul class="navbar-nav">

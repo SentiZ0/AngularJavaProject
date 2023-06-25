@@ -19,6 +19,8 @@ import { EmailGetAllComponent } from './components/email/email-get-all/email-get
 import { CategoryGetAllComponent } from './components/category/category-get-all/category-get-all.component';
 import { CategoryGetSingleComponent } from './components/category/category-get-single/category-get-single.component';
 import { PostGetSingleComponent } from './components/post/post-get-single/post-get-single.component';
+import { UserGetAllComponent } from './components/user/user-get-all/user-get-all.component';
+import { NoPermissionsComponent } from './components/home/no-permissions/no-permissions.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { PostGetSingleComponent } from './components/post/post-get-single/post-g
     EmailGetAllComponent,
     CategoryGetAllComponent,
     CategoryGetSingleComponent,
-    PostGetSingleComponent
+    PostGetSingleComponent,
+    UserGetAllComponent,
+    NoPermissionsComponent
   ],
   imports: [
     BrowserModule,
