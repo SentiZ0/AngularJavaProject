@@ -27,8 +27,6 @@ export class CategoryGetSingleComponent {
   {
     this.id = Number(this.route.snapshot.paramMap.get('id'));
 
-    this.category = new Category(1, "Elektronika");
-
     this.getCategory();
 
     let userRoleAsString = localStorage.getItem('loggedUserRole');
@@ -46,7 +44,7 @@ export class CategoryGetSingleComponent {
   saveCategory() {
     if (this.category) {
       const updatedCategory = new Category(this.category.id, this.editCategoryName);
-      this.categoryService.updateCategory(updatedCategory).subscribe(data => {
+      this.categoryService.updateCategory(this.category.id, updatedCategory).subscribe(data => {
         this.router.navigate(['/category-get-all']);
       });
     }

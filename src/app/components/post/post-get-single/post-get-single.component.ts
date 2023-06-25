@@ -32,21 +32,6 @@ export class PostGetSingleComponent {
   ngOnInit() {
     this.id = Number(this.route.snapshot.paramMap.get('id'));
 
-    this.comments = [
-      new Comment(1, "To jest pierwszy komentarz", new Date(), 1, 1),
-      new Comment(2, "To jest drugi komentarz", new Date(), 2, 1),
-      new Comment(3, "To jest trzeci komentarz", new Date(), 3, 2),
-      new Comment(4, "To jest czwarty komentarz", new Date(), 2, 2),
-      new Comment(5, "To jest piąty komentarz", new Date(), 1, 3),
-      new Comment(6, "To jest szósty komentarz", new Date(), 3, 3),
-      new Comment(7, "To jest siódmy komentarz", new Date(), 1, 4),
-      new Comment(8, "To jest ósmy komentarz", new Date(), 2, 4),
-      new Comment(9, "To jest dziewiąty komentarz", new Date(), 3, 4),
-      new Comment(10, "To jest dziesiąty komentarz", new Date(), 1, 5)
-    ];
-
-    this.post = new Post(1, 'Tytuł posta 1', 'Opis posta 1', new Date(), 1, 1, 1);
-
     let userIdAsString = localStorage.getItem('loggedUserId');
 
     let userRoleAsString = localStorage.getItem('loggedUserRole');
@@ -77,7 +62,7 @@ export class PostGetSingleComponent {
 
   updatePost() {
     if (this.post) {
-      this.postService.updatePost(this.post).subscribe();
+      this.postService.updatePost(this.post.id, this.post).subscribe();
     }
   }
 
