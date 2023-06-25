@@ -18,20 +18,7 @@ export class EmailGetAllComponent {
 
   userRole: number = 0;
 
-  ngOnInit(){
-    this.emails = [
-      new Email(1, "Ważne powiadomienie", "To jest treść ważnego powiadomienia.", 1, new Date()),
-      new Email(2, "Promocja", "Mamy dla Ciebie specjalną promocję. Skorzystaj z niej!", 2, new Date()),
-      new Email(3, "Zaproszenie na spotkanie", "Zapraszamy Cię na nasze spotkanie w przyszłym tygodniu.", 3, new Date()),
-      new Email(4, "Nowy produkt", "Przedstawiamy nasz najnowszy produkt. Sprawdź go już dziś!", 4, new Date()),
-      new Email(5, "Aktualizacja regulaminu", "Informujemy o wprowadzeniu nowych zmian w regulaminie serwisu.", 5, new Date()),
-      new Email(6, "Podziękowanie za rejestrację", "Dziękujemy za rejestrację w naszym serwisie. Miłego korzystania!", 6, new Date()),
-      new Email(7, "Przypomnienie o płatności", "Przypominamy o zbliżającym się terminie płatności. Prosimy uregulować należność.", 7, new Date()),
-      new Email(8, "Artykuł tygodnia", "Zapraszamy do zapoznania się z naszym artykułem tygodnia. Ciekawe informacje czekają!", 8, new Date()),
-      new Email(9, "Dziękujemy za zakupy", "Dziękujemy za zakupy w naszym sklepie. Mamy nadzieję, że jesteś zadowolony z naszych produktów.", 9, new Date()),
-      new Email(10, "Nowa oferta pracy", "Ogłaszamy nową ofertę pracy. Jeśli jesteś zainteresowany, skontaktuj się z nami.", 10, new Date()),
-    ];
-    
+  ngOnInit(){    
     this.getEmails();
 
     let userRoleAsString = localStorage.getItem('loggedUserRole');

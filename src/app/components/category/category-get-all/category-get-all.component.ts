@@ -23,19 +23,6 @@ export class CategoryGetAllComponent {
 
   ngOnInit()
   {
-    this.categories = [
-      new Category(1, "Elektronika"),
-      new Category(2, "Moda"),
-      new Category(3, "Dom i ogród"),
-      new Category(4, "Motoryzacja"),
-      new Category(5, "Książki"),
-      new Category(6, "Sport i rekreacja"),
-      new Category(7, "Zdrowie i uroda"),
-      new Category(8, "Dzieci"),
-      new Category(9, "Gry i zabawki"),
-      new Category(10, "Filmy i muzyka"),
-    ];
-    
     this.getCategories();
 
     let userRoleAsString = localStorage.getItem('loggedUserRole');

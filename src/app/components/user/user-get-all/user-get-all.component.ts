@@ -20,19 +20,6 @@ export class UserGetAllComponent {
 
   ngOnInit()
   {
-    this.users = [
-      new User(1, "john123", "password123", 1),
-      new User(2, "alice89", "secret123", 2),
-      new User(3, "bobsmith", "p@ssw0rd", 1),
-      new User(4, "emily22", "qwerty123", 2),
-      new User(5, "mike87", "abcd1234", 1),
-      new User(6, "sarah123", "password987", 2),
-      new User(7, "david01", "pass123word", 1),
-      new User(8, "jessica99", "abc123", 2),
-      new User(9, "alex12", "qwertyuiop", 1),
-      new User(10, "laura55", "password456", 2)
-    ];
-
     let userRoleAsString = localStorage.getItem('loggedUserRole');
 
     if (userRoleAsString) {

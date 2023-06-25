@@ -7,11 +7,11 @@
         <div>
           <strong>Login:</strong> {{ user.userLogin }}
           <br>
-          <strong>Role:</strong> {{ getRoleName(user.userRole) }}
+          <strong>Role:</strong> {{ getRoleName(user.role_id) }}
         </div>
         <div>
           <div class="input-group">
-            <select class="form-select" [(ngModel)]="user.userRole" (change)="updateUserRole(user)">
+            <select class="form-select" [(ngModel)]="user.role_id" (change)="updateUserRole(user)">
               <option value="1">Użytkownik</option>
               <option value="2">Redaktor</option>
               <option value="3">Admin</option>

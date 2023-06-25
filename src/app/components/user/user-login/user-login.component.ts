@@ -32,7 +32,7 @@ export class UserLoginComponent {
 
         localStorage.setItem('LoggedUserId', this.user.id.toString());
 
-        localStorage.setItem('LoggedUserRole', this.user.userRole.toString());
+        localStorage.setItem('LoggedUserRole', this.user.role_id.toString());
 
         window.location.href = 'http://localhost:4200';
       }});
